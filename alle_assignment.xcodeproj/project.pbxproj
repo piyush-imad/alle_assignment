@@ -14,6 +14,17 @@
 		4B7846BC2ACB371E00A9B69C /* alle_assignment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4B7846BA2ACB371E00A9B69C /* alle_assignment.xcdatamodeld */; };
 		4B7846BE2ACB372000A9B69C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B7846BD2ACB372000A9B69C /* Assets.xcassets */; };
 		4B7846C12ACB372000A9B69C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B7846BF2ACB372000A9B69C /* LaunchScreen.storyboard */; };
+		4B7846C92ACB3CB600A9B69C /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7846C82ACB3CB600A9B69C /* ImageCollectionViewCell.swift */; };
+		4B993ED02ACF0A2E0061EEF8 /* ImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B993ECF2ACF0A2E0061EEF8 /* ImageRepository.swift */; };
+		4B993ED22ACF0BB00061EEF8 /* ImageDataClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B993ED12ACF0BB00061EEF8 /* ImageDataClient.swift */; };
+		4B993ED42ACF0D2C0061EEF8 /* AlleImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B993ED32ACF0D2C0061EEF8 /* AlleImageProcessor.swift */; };
+		4B993ED62AD01D2D0061EEF8 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B993ED52AD01D2D0061EEF8 /* MainViewModel.swift */; };
+		4BFD626D2ACCAC7B00BABF03 /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFD626C2ACCAC7B00BABF03 /* ImageProcessor.swift */; };
+		4BFD62702ACDD71300BABF03 /* Vision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BFD626F2ACDD71300BABF03 /* Vision.framework */; };
+		4BFD62722ACDDB0F00BABF03 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4BFD62712ACDDB0F00BABF03 /* Resnet50.mlmodel */; };
+		4BFD62742ACDE58E00BABF03 /* SheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFD62732ACDE58E00BABF03 /* SheetViewController.swift */; };
+		4BFD62772ACDF0C900BABF03 /* Screenshot+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFD62752ACDF0C900BABF03 /* Screenshot+CoreDataClass.swift */; };
+		4BFD62782ACDF0C900BABF03 /* Screenshot+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFD62762ACDF0C900BABF03 /* Screenshot+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +37,17 @@
 		4B7846BD2ACB372000A9B69C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B7846C02ACB372000A9B69C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B7846C22ACB372000A9B69C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B7846C82ACB3CB600A9B69C /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		4B993ECF2ACF0A2E0061EEF8 /* ImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepository.swift; sourceTree = "<group>"; };
+		4B993ED12ACF0BB00061EEF8 /* ImageDataClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataClient.swift; sourceTree = "<group>"; };
+		4B993ED32ACF0D2C0061EEF8 /* AlleImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlleImageProcessor.swift; sourceTree = "<group>"; };
+		4B993ED52AD01D2D0061EEF8 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		4BFD626C2ACCAC7B00BABF03 /* ImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessor.swift; sourceTree = "<group>"; };
+		4BFD626F2ACDD71300BABF03 /* Vision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Vision.framework; path = System/Library/Frameworks/Vision.framework; sourceTree = SDKROOT; };
+		4BFD62712ACDDB0F00BABF03 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
+		4BFD62732ACDE58E00BABF03 /* SheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewController.swift; sourceTree = "<group>"; };
+		4BFD62752ACDF0C900BABF03 /* Screenshot+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Screenshot+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4BFD62762ACDF0C900BABF03 /* Screenshot+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Screenshot+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BFD62702ACDD71300BABF03 /* Vision.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,8 +65,11 @@
 		4B7846A52ACB371E00A9B69C = {
 			isa = PBXGroup;
 			children = (
+				4BFD62752ACDF0C900BABF03 /* Screenshot+CoreDataClass.swift */,
+				4BFD62762ACDF0C900BABF03 /* Screenshot+CoreDataProperties.swift */,
 				4B7846B02ACB371E00A9B69C /* alle_assignment */,
 				4B7846AF2ACB371E00A9B69C /* Products */,
+				4BFD626E2ACDD71300BABF03 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,9 +84,12 @@
 		4B7846B02ACB371E00A9B69C /* alle_assignment */ = {
 			isa = PBXGroup;
 			children = (
+				4B993ED82AD01DB80061EEF8 /* ScreenshotInfoScreen */,
+				4B993ED72AD01D930061EEF8 /* ScreenshotScreen */,
+				4B993ECE2ACF0A0B0061EEF8 /* ImageRepository */,
+				4BFD62692ACCAB2800BABF03 /* IntelligenceModule */,
 				4B7846B12ACB371E00A9B69C /* AppDelegate.swift */,
 				4B7846B32ACB371E00A9B69C /* SceneDelegate.swift */,
-				4B7846B52ACB371E00A9B69C /* ViewController.swift */,
 				4B7846B72ACB371E00A9B69C /* Main.storyboard */,
 				4B7846BD2ACB372000A9B69C /* Assets.xcassets */,
 				4B7846BF2ACB372000A9B69C /* LaunchScreen.storyboard */,
@@ -68,6 +97,51 @@
 				4B7846BA2ACB371E00A9B69C /* alle_assignment.xcdatamodeld */,
 			);
 			path = alle_assignment;
+			sourceTree = "<group>";
+		};
+		4B993ECE2ACF0A0B0061EEF8 /* ImageRepository */ = {
+			isa = PBXGroup;
+			children = (
+				4B993ECF2ACF0A2E0061EEF8 /* ImageRepository.swift */,
+				4B993ED12ACF0BB00061EEF8 /* ImageDataClient.swift */,
+			);
+			path = ImageRepository;
+			sourceTree = "<group>";
+		};
+		4B993ED72AD01D930061EEF8 /* ScreenshotScreen */ = {
+			isa = PBXGroup;
+			children = (
+				4B7846B52ACB371E00A9B69C /* ViewController.swift */,
+				4B993ED52AD01D2D0061EEF8 /* MainViewModel.swift */,
+				4B7846C82ACB3CB600A9B69C /* ImageCollectionViewCell.swift */,
+			);
+			path = ScreenshotScreen;
+			sourceTree = "<group>";
+		};
+		4B993ED82AD01DB80061EEF8 /* ScreenshotInfoScreen */ = {
+			isa = PBXGroup;
+			children = (
+				4BFD62732ACDE58E00BABF03 /* SheetViewController.swift */,
+			);
+			path = ScreenshotInfoScreen;
+			sourceTree = "<group>";
+		};
+		4BFD62692ACCAB2800BABF03 /* IntelligenceModule */ = {
+			isa = PBXGroup;
+			children = (
+				4BFD626C2ACCAC7B00BABF03 /* ImageProcessor.swift */,
+				4B993ED32ACF0D2C0061EEF8 /* AlleImageProcessor.swift */,
+			);
+			path = IntelligenceModule;
+			sourceTree = "<group>";
+		};
+		4BFD626E2ACDD71300BABF03 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4BFD62712ACDDB0F00BABF03 /* Resnet50.mlmodel */,
+				4BFD626F2ACDD71300BABF03 /* Vision.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,10 +215,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BFD626D2ACCAC7B00BABF03 /* ImageProcessor.swift in Sources */,
+				4BFD62782ACDF0C900BABF03 /* Screenshot+CoreDataProperties.swift in Sources */,
 				4B7846B62ACB371E00A9B69C /* ViewController.swift in Sources */,
+				4BFD62772ACDF0C900BABF03 /* Screenshot+CoreDataClass.swift in Sources */,
+				4B7846C92ACB3CB600A9B69C /* ImageCollectionViewCell.swift in Sources */,
 				4B7846B22ACB371E00A9B69C /* AppDelegate.swift in Sources */,
+				4BFD62742ACDE58E00BABF03 /* SheetViewController.swift in Sources */,
+				4B993ED62AD01D2D0061EEF8 /* MainViewModel.swift in Sources */,
+				4B993ED02ACF0A2E0061EEF8 /* ImageRepository.swift in Sources */,
+				4B993ED22ACF0BB00061EEF8 /* ImageDataClient.swift in Sources */,
 				4B7846BC2ACB371E00A9B69C /* alle_assignment.xcdatamodeld in Sources */,
+				4BFD62722ACDDB0F00BABF03 /* Resnet50.mlmodel in Sources */,
 				4B7846B42ACB371E00A9B69C /* SceneDelegate.swift in Sources */,
+				4B993ED42ACF0D2C0061EEF8 /* AlleImageProcessor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
