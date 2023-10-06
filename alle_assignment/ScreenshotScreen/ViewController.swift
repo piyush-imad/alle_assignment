@@ -15,14 +15,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var photosCollectionView: UICollectionView!
     @IBOutlet weak var tabBar: UITabBar!
     @IBOutlet weak var bottomBarCollectionView: UICollectionView!
+    var currentImageID: String?
     
     
     var allPhotos: PHFetchResult<PHAsset>!
     var isScrolling = false
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+
         viewModel.delegate = self
         photosCollectionView.delegate = self
         photosCollectionView.dataSource = self
@@ -75,10 +75,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                         self.photosCollectionView.reloadData()
                         self.bottomBarCollectionView.reloadData()
                         
-                        // Get the index of the last picture
                         let lastPictureIndex = self.allPhotos.count - 1
                         
-                        // Scroll to the last picture in the main collection view
                         self.photosCollectionView.scrollToItem(at: IndexPath(item: lastPictureIndex, section: 0), at: .left, animated: false)
                         self.bottomBarCollectionView.scrollToItem(at: IndexPath(item: lastPictureIndex, section: 0), at: .left, animated: false)
                     }
@@ -90,25 +88,19 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        //        if scrollView == photosCollectionView {
-        //            // Calculate the visible photo index based on the current content offset
-        //            let visiblePhotoIndex = Int(scrollView.contentOffset.x / scrollView.bounds.width)
-        //
-        //            // Scroll the bottom bar collection view to the same index
-        //            let bottomBarIndexPath = IndexPath(item: visiblePhotoIndex, section: 0)
-        //            bottomBarCollectionView.scrollToItem(at: bottomBarIndexPath, at: .centeredHorizontally, animated: true)
-        //        }
-        //           else
+        
         if scrollView == bottomBarCollectionView {
-            // Calculate the center of the visible rect in the bottom collection view
             let visibleRect = CGRect(origin: bottomBarCollectionView.contentOffset, size: bottomBarCollectionView.bounds.size)
             let center = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
-            
-            // Find the index path for the center of the bottom collection view
+           
             if let indexPath = bottomBarCollectionView.indexPathForItem(at: center) {
-                // Scroll the main photo view to center the currently viewed image
                 photosCollectionView.scrollToItem(at: indexPath, at: .left, animated: false)
             }
+        }
+        else if scrollView == photosCollectionView {
+            if let visibleIndexPath = photosCollectionView.indexPathsForVisibleItems.first {
+                    handleImage(at: visibleIndexPath)
+                }
         }
     }
     
@@ -163,15 +155,28 @@ extension ViewController {
             let manager = PHImageManager.default()
             
             let targetSize = CGSize(width: asset.pixelWidth, height: asset.pixelHeight)
-            manager.requestImage(for: asset, targetSize: targetSize, contentMode: .aspectFill, options: nil) { (image, _) in
-                if let selectedImage = image {
-                    DispatchQueue.global().async {
-                        ImageProcessor().processImage(asset.localIdentifier, selectedImage)
-                    }
-                }
-            }
             bottomBarCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
             photosCollectionView.scrollToItem(at: indexPath, at: .left, animated: true)
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+            if let visibleIndexPath = photosCollectionView.indexPathsForVisibleItems.first {
+                handleImage(at: visibleIndexPath)
+            }
+    }
+    
+    func handleImage(at indexPath: IndexPath) {
+        let asset = allPhotos[indexPath.row]
+        let manager = PHImageManager.default()
+        
+        let targetSize = PHImageManagerMaximumSize
+        manager.requestImage(for: asset, targetSize: targetSize, contentMode: .aspectFill, options: nil) { (image, _) in
+            if let selectedImage = image {
+                DispatchQueue.global().async {
+                    ImageProcessor.shared.checkOrCreateEntry(for: asset.localIdentifier, selectedImage)
+                }
+            }
         }
     }
 }
@@ -189,12 +194,28 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 extension ViewController {
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         if item.tag == 1 {
-            let sheetVC = SheetViewController()
-            sheetVC.modalPresentationStyle = .pageSheet
-            if let sheet = sheetVC.sheetPresentationController {
-                sheet.detents = [.medium(), .large()]
+            guard let currentVisibleIndexPath = photosCollectionView.indexPathsForVisibleItems.first else {
+                print("No visible image in the photosCollectionView")
+                return
             }
-            self.present(sheetVC, animated: true, completion: nil)
+
+            let asset = allPhotos[currentVisibleIndexPath.row]
+            let manager = PHImageManager.default()
+            let targetSize = PHImageManagerMaximumSize
+            
+            manager.requestImage(for: asset, targetSize: targetSize, contentMode: .aspectFill, options: nil) { [weak self] (image, _) in
+                guard let self = self else { return }
+
+                let sheetVC = SheetViewController()
+                sheetVC.imageID = asset.localIdentifier
+                sheetVC.image = image
+                
+                sheetVC.modalPresentationStyle = .pageSheet
+                if let sheet = sheetVC.sheetPresentationController {
+                    sheet.detents = [.medium(), .large()]
+                }
+                self.present(sheetVC, animated: true, completion: nil)
+            }
         }
     }
 }

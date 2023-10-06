@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B14408B2AD0B49B00B1E830 /* LabelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B14408A2AD0B49B00B1E830 /* LabelCollectionViewCell.swift */; };
 		4B7846B22ACB371E00A9B69C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7846B12ACB371E00A9B69C /* AppDelegate.swift */; };
 		4B7846B42ACB371E00A9B69C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7846B32ACB371E00A9B69C /* SceneDelegate.swift */; };
 		4B7846B62ACB371E00A9B69C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7846B52ACB371E00A9B69C /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B14408A2AD0B49B00B1E830 /* LabelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCollectionViewCell.swift; sourceTree = "<group>"; };
 		4B7846AE2ACB371E00A9B69C /* alle_assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = alle_assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B7846B12ACB371E00A9B69C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B7846B32ACB371E00A9B69C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				4BFD62732ACDE58E00BABF03 /* SheetViewController.swift */,
+				4B14408A2AD0B49B00B1E830 /* LabelCollectionViewCell.swift */,
 			);
 			path = ScreenshotInfoScreen;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				4BFD62772ACDF0C900BABF03 /* Screenshot+CoreDataClass.swift in Sources */,
 				4B7846C92ACB3CB600A9B69C /* ImageCollectionViewCell.swift in Sources */,
 				4B7846B22ACB371E00A9B69C /* AppDelegate.swift in Sources */,
+				4B14408B2AD0B49B00B1E830 /* LabelCollectionViewCell.swift in Sources */,
 				4BFD62742ACDE58E00BABF03 /* SheetViewController.swift in Sources */,
 				4B993ED62AD01D2D0061EEF8 /* MainViewModel.swift in Sources */,
 				4B993ED02ACF0A2E0061EEF8 /* ImageRepository.swift in Sources */,
