@@ -43,7 +43,7 @@ class MainViewModel {
     }
     
     func fetchPhotos(completion: @escaping (PHFetchResult<PHAsset>)->()) {
-        DispatchQueue.global(qos: .background).async {
+        DispatchQueue.global(qos: .userInteractive).async {
             let fetchOptions = PHFetchOptions()
             
             fetchOptions.predicate = NSPredicate(format: "mediaSubtype == %ld", PHAssetMediaSubtype.photoScreenshot.rawValue)

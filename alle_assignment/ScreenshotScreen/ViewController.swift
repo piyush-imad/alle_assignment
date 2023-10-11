@@ -30,7 +30,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         bottomBarCollectionView.delegate = self
         bottomBarCollectionView.dataSource = self
         tabBar.delegate = self
-        
+        bottomBarCollectionView.contentInset = UIEdgeInsets(top: 0, left: view.frame.width/2 - 2, bottom: 0, right: view.frame.width/2 - 2)
         
         
         if let flowLayout = photosCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
@@ -171,8 +171,10 @@ extension ViewController {
         let manager = PHImageManager.default()
         
         let targetSize = PHImageManagerMaximumSize
-        manager.requestImage(for: asset, targetSize: targetSize, contentMode: .aspectFill, options: nil) { (image, _) in
-            if let selectedImage = image {
+        manager.requestImage(for: asset, targetSize: targetSize, contentMode: .aspectFill, options: nil) { (image, info) in
+            let isDegraded = (info?[PHImageResultIsDegradedKey] as? Bool) ?? false
+            
+            if let selectedImage = image, !isDegraded {
                 DispatchQueue.global().async {
                     ImageProcessor.shared.checkOrCreateEntry(for: asset.localIdentifier, selectedImage)
                 }
